@@ -3,22 +3,45 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "test": "jest",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@babel/preset-typescript": "^7.23.3",
+    "@logue/vue2-helpers": "^2.3.0",
+    "@types/vue": "^2.0.0",
+    "axios": "^1.6.5",
+    "base64url": "^3.0.1",
+    "buffer": "^6.0.3",
     "core-js": "^3.8.3",
-    "vue": "^2.6.14"
+    "element-ui": "^2.15.14",
+    "eslint-plugin-import": "^2.29.1",
+    "lodash": "^4.17.21",
+    "stylus": "^0.62.0",
+    "stylus-loader": "^8.0.0",
+    "vue": "^2.6.14",
+    "vue-file-base64": "^1.0.2",
+    "vue-paginate": "^3.6.0",
+    "vue-router": "^3.6.5",
+    "vuejs-paginate": "^2.1.0",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
+    "@types/jest": "^29.5.11",
+    "@types/lodash": "^4.14.202",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3",
     "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
@@ -28,12 +51,22 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "eslint:recommended"
+      "eslint:recommended",
+      "plugin:import/typescript"
     ],
     "parserOptions": {
-      "parser": "@babel/eslint-parser"
+      "parser": [
+        "@babel/eslint-parser",
+        "@typescript-eslint/parser"
+      ]
     },
-    "rules": {}
+    "rules": {
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/ban-types": "off",
+      "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/no-empty-function": "off",
+      "@typescript-eslint/no-non-null-assertion": "off"
+    }
   },
   "browserslist": [
     "> 1%",
